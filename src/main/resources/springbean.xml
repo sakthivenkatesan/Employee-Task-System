@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"> 
+
+<bean id = "task1" class = "EmployeeTaskSystem.Task">
+<property name="taskid" value = "1"></property>
+<property name="taskname" value = "Registration of biometrics"></property>
+<property name="task_description" value = "All must register their biometrics to employee database"></property>
+<property name="date_of_allocation" value = "2022-03-01"></property>
+<property name="deadline" value = "2022-03-10"></property>
+<property name="allocated_to" value = "AAA, BBB"></property>
+</bean>
+
+<bean id = "task2" class = "EmployeeTaskSystem.Task">
+<property name="taskid" value = "2"></property>
+<property name="taskname" value = "Salary Verification"></property>
+<property name="task_description" value = "The splitup of the salary should be verified with higher officials"></property>
+<property name="date_of_allocation" value = "2022-03-01"></property>
+<property name="deadline" value = "2022-03-05"></property>
+<property name="allocated_to" value = "AAA"></property>
+</bean>
+
+<bean id = "task3" class = "EmployeeTaskSystem.Task">
+<property name="taskid" value = "3"></property>
+<property name="taskname" value = "Life insurance should be purchased"></property>
+<property name="task_description" value = "The details of the life insurance bought should be submitted"></property>
+<property name="date_of_allocation" value = "2022-01-01"></property>
+<property name="deadline" value = "2022-04-01"></property>
+<property name="allocated_to" value = "BBB"></property>
+</bean>
+
+<bean id = "day1" class = "EmployeeTaskSystem.Attendance">
+<property name="attendance_id" value = "1"></property>
+<property name="attendance_date" value = "2022-03-01"></property>
+<property name="attendance_id" value = "PRESENT"></property>
+</bean>
+
+<bean id = "day2" class = "EmployeeTaskSystem.Attendance">
+<property name="attendance_id" value = "1"></property>
+<property name="attendance_date" value = "2022-03-02"></property>
+<property name="attendance_id" value = "PRESENT"></property>
+</bean>
+
+<bean id = "day3" class = "EmployeeTaskSystem.Attendance">
+<property name="attendance_id" value = "1"></property>
+<property name="attendance_date" value = "2022-03-03"></property>
+<property name="attendance_id" value = "ABSENT"></property>
+</bean>
+
+<bean id = "day4" class = "EmployeeTaskSystem.Attendance">
+<property name="attendance_id" value = "1"></property>
+<property name="attendance_date" value = "2022-03-04"></property>
+<property name="attendance_id" value = "PRESENT"></property>
+</bean>
+
+<bean id="employee" class="EmployeeTaskSystem.Employee">
+<property name="employeeid" value="001"/>
+<property name="employee_name" value="AAA"/>
+<property name="department" value="Production"/>
+<property name="designation" value="Field Worker"/>
+<property name="password" value="AAAFW@P"/>
+<property name="tasklist">
+<list>
+<ref bean="task1"/>
+<ref bean="task2"/>
+</list>
+</property>
+<property name="attendance_list">
+<list>
+<ref bean="day1"/>
+<ref bean="day2"/>
+<ref bean="day3"/>
+<ref bean="day4"/>
+</list>
+</property>
+<property name="employee_rating" value = "GOOD"></property>
+</bean>
+
+<bean id="employee2" class="EmployeeTaskSystem.Employee">
+<property name="employeeid" value="002"/>
+<property name="employee_name" value="BBB"/>
+<property name="department" value="Director"/>
+<property name="designation" value="Human Resources"/>
+<property name="password" value= "BBBD@HR"/>
+<property name="tasklist">
+<list>
+<ref bean="task1"/>
+<ref bean="task2"/>
+<ref bean="task3"/>
+</list>
+</property>
+<property name="attendance_list">
+<list>
+<ref bean="day1"/>
+<ref bean="day2"/>
+<ref bean="day3"/>
+</list>
+</property>
+<property name="employee_rating" value = "EXCELLENT"></property>
+</bean>
+
+</beans>
